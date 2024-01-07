@@ -129,7 +129,7 @@ import cv2
 import matplotlib.pyplot as plt
 
 # %%
-image = cv2.imread("/content/Anomalib-Trainer/cropped/abnormal/1605_jpg.rf.6fb44c2809edbc36b2df72f80c98c382.jpg")[...,::-1]
+image = cv2.imread("cropped/abnormal/1605_jpg.rf.6fb44c2809edbc36b2df72f80c98c382.jpg")[...,::-1]
 
 # %%
 inferencer = TorchInferencer(path="results/custom/run/weights/torch/model.pt")
@@ -145,4 +145,4 @@ axes[1].imshow(predictions.heat_map)
 axes[2].imshow(predictions.anomaly_map)
 axes[3].imshow(predictions.segmentations)
 
-
+fig.savefig("plots.png")
